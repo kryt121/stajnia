@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div>
+    <h1>Czynność</h1>
+</div>
+
+  {% if user.is_authenticated %}
+  <p><strong>Czynność:</strong> {{ action.nazwa }}</p>
+  <p> {{ action.uwagi }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Koszt:</strong> {{ action.koszt }} PLN</p>
+  <p><strong>Data:</strong> {{ action.data_wykonania }} kg</p>
+  <p><strong>Pojazd:</strong> {{ action.vehicle }}</p>
+  <p><strong>Przebieg: </strong> {{ action.przebieg  }} km</p>
+
+  {% endif%}
+{% endblock %}

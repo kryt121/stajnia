@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+  <div>
+      <h1>Pojazd</h1>
+  </div>
+
+  <a href="{% url 'vehicle-submit' vehicle.id %}">Edycja</a>
+  <p><strong>Pojazd:</strong> {{ vehicle.nazwa }}</p>
+  <p> {{ vehicle.uwagi }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Rok produkcji:</strong> {{ vehicle.rok_produkcji }} </p>
+  <p><strong>Przebieg:</strong> {{ vehicle.przebieg }} km</p>
+  <p><strong>Przegląd techniczny do: </strong> {{ vehicle.przeglad_techniczny }}</p>
+  <p><strong>Ubezpieczenie do: </strong> {{ vehicle.ubezpieczenie }}</p>
+  <p><strong>Wymiana oleju do: </strong> {{ vehicle.wymiana_oleju }}</p>
+
+  {% endif%}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div>
+      <h1>Czynności</h1>
+  </div>
+<p><strong>Suma kosztów:</strong> {{ suma_kosztow }} PLN</p>
+{% for action in actions %}
+    <div>
+
+      <p>Furka: {{ action.vehicle.nazwa }} / {{ action.vehicle.rok_produkcji }} / {{ action.vehicle.przebieg }} km</p>
+      <p>Przy przebiegu: {{ action.przebieg }} km</p>
+      <p>Wykonano: {{ action.nazwa }} - {{ action.data_wykonania }}</p>
+      <p>{{ action.uwagi|linebreaksbr }}</p>
+      <p>Koszt: {{ action.koszt }} PLN</p>
+      <hr>
+
+    </div>
+{% endfor %}
+
+{% endblock %}

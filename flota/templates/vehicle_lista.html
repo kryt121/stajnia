@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div>
+		<h1>Pojazdy</h1>
+</div>
+
+{% for vehicle in vehicles %}
+		<div>
+
+				<h3><a href="{% url 'vehicle-detail' vehicle.id %}">{{ vehicle.nazwa }} - {{ vehicle.rok_produkcji}}</a></h3>
+				<h3><a href="{% url 'action_lista_vehicle' vehicle.id %}">Czynności</a></h3>
+				<p>{{ vehicle.uwagi|linebreaksbr }}</p>
+				<p>Przebieg: {{ vehicle.przebieg }} km</p>
+				<p>Przegląd techniczny do : {{ vehicle.przeglad_techniczny }}</p>
+				<p>Wymiana oleju do : {{ vehicle.wymiana_oleju }}</p>
+				<p>Ubezpieczenie do : {{ vehicle.ubezpieczenie }}</p>
+
+				</div>
+				<hr>
+{% endfor %}
+
+
+{% endblock %}

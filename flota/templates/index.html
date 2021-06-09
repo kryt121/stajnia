@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Flota - strona domowa</h1>
+  <p>Witaj na stronie Floty stworzonej przez <em>Verdaduras Development Team</em>!</p>
+  <h2>Dynamiczna zawartość</h2>
+  <p>U nas dużo się dzieje:</p>
+  <ul>
+    <li><strong>Pojazdów:</strong> {{ num_vehicle }}</li>
+    <li><strong>Czynności:</strong> {{ num_action }}</li>
+    <li><strong>Liczba wejść na stronę w czasie sesji:</strong> {{ num_visits }}</li>
+  </ul>
+{% endblock %}
